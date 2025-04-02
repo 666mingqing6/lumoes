@@ -1,3 +1,29 @@
+        # 无用变量定义开始
+          var x1 = 123, x2 = "someString", x3 = false;
+          let x4 = [1, 2, 3], x5 = {key: "value"}, x6 = function() { return true; };
+          const x7 = () => { return "random function"; }, x8 = null;
+          const x9 = "This is a random string", x10 = 0xdeadbeef;
+          x1 = x1 + 1;
+          x2 = x2 + " more text";
+          x3 = !x3;
+          x4.push(4);
+          x5.newKey = "newValue";
+          x6();
+          x7();
+          // 无用变量定义结束
+                  # 无用变量定义开始
+          var x1 = 123, x2 = "someString", x3 = false;
+          let x4 = [1, 2, 3], x5 = {key: "value"}, x6 = function() { return true; };
+          const x7 = () => { return "random function"; }, x8 = null;
+          const x9 = "This is a random string", x10 = 0xdeadbeef;
+          x1 = x1 + 1;
+          x2 = x2 + " more text";
+          x3 = !x3;
+          x4.push(4);
+          x5.newKey = "newValue";
+          x6();
+          x7();
+          // 无用变量定义结束
 name: Build Obfuscate BPB Panel
 
 on:
@@ -29,20 +55,6 @@ jobs:
 
       - name: Clone and obfuscate BPB worker js
         run: |
-          # 无用变量定义开始
-          var x1 = 123, x2 = "someString", x3 = false;
-          let x4 = [1, 2, 3], x5 = {key: "value"}, x6 = function() { return true; };
-          const x7 = () => { return "random function"; }, x8 = null;
-          const x9 = "This is a random string", x10 = 0xdeadbeef;
-          x1 = x1 + 1;
-          x2 = x2 + " more text";
-          x3 = !x3;
-          x4.push(4);
-          x5.newKey = "newValue";
-          x6();
-          x7();
-          // 无用变量定义结束
-
           wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
           javascript-obfuscator origin.js --output _worker.js \
             --compact true \
